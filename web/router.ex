@@ -16,7 +16,8 @@ defmodule Devmentor.Router do
   scope "/", Devmentor do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/phoenix_home", PageController, :phoenix_home
+    get "/", PageController, :home
     resources "/notes", NoteController
   end
 
