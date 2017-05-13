@@ -1,8 +1,11 @@
 defmodule Devmentor.MentorshipControllerTest do
   use Devmentor.ConnCase
 
-  alias Devmentor.Mentorship
-  @valid_attrs %{mentee_id: 42, mentor_id: 42}
+  alias Devmentor.{Mentorship, User}
+  @valid_attrs %{
+    mentee_id: 42,
+    mentor_id: 42
+  }
   @invalid_attrs %{}
 
   test "lists all entries on index", %{conn: conn} do
@@ -27,7 +30,9 @@ defmodule Devmentor.MentorshipControllerTest do
   end
 
   test "shows chosen resource", %{conn: conn} do
-    mentorship = Repo.insert! %Mentorship{}
+    user = Repo.insert! %User{}
+    user_2 = Repo.insert! %User{}
+    mentorship = Repo.insert! %Mentorship{mentor_id: user.id, mentee_id: user_2.id}
     conn = get conn, mentorship_path(conn, :show, mentorship)
     assert html_response(conn, 200) =~ "Show mentorship"
   end
