@@ -28,5 +28,6 @@ defmodule Devmentor.Router do
     pipe_through :api
 
     get "/mentorships/:id/notes", Api.MentorshipController, :notes, as: :api_mentorship
+    post "/notes", Api.NoteController, :create, as: :api_note
   end
 end
