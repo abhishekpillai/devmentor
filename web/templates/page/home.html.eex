@@ -1,1 +1,38 @@
-<h1>Hi Neely</h1>
+<header>
+    <h1>DevMentor</h1>
+    <img src="/images/neely.jpeg" class="user-profile-image"/>
+</header>
+<aside>
+    <img src="/images/abhi.jpg" class="mentor-profile-image">
+    <h2>Your Mentor</h2>
+    <h3>Matt Jeffrey</h3>
+    <h3>Full Stack Engineer</h3>
+    <ul class="content-menu">
+        <li>Home</li>
+        <li>Action Items</li>
+        <li>Key Lessons</li>
+        <li>Industry/Career Content</li>
+    </ul>
+</aside>
+<section>
+    <ul class="takeaway-menu">
+        <li>
+            <i class="fa fa-share" aria-hidden="true"></i> Share an Update
+        </li>
+        <li>
+            <i class="fa fa-microphone" aria-hidden="true"></i> Record a Session
+        </li>
+        <li>
+            <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Schedule a Session
+        </li>
+    </ul>
+    <form>
+        <input class="note-input"/>
+        <a class="Post" href="">Post</a>
+    </form>
+    <ol class="note-list">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</section>
