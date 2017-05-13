@@ -3,6 +3,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Id</th>
       <th>Mentor</th>
       <th>Mentee</th>
 
@@ -12,8 +13,9 @@
   <tbody>
 <%= for mentorship <- @mentorships do %>
     <tr>
-      <td><%= mentorship.mentor_id %></td>
-      <td><%= mentorship.mentee_id %></td>
+      <td><%= mentorship.id %></td>
+      <td><%= mentorship.mentor.name %></td>
+      <td><%= mentorship.mentee.name %></td>
 
       <td class="text-right">
         <%= link "Show", to: mentorship_path(@conn, :show, mentorship), class: "btn btn-default btn-xs" %>

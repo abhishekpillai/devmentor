@@ -2,9 +2,9 @@ defmodule Devmentor.Mentorship do
   use Devmentor.Web, :model
 
   schema "mentorships" do
-    field :mentor_id, :integer
-    field :mentee_id, :integer
-
+    belongs_to :mentor, Devmentor.User
+    belongs_to :mentee, Devmentor.User
+    has_many :notes, Devmentor.Note
     timestamps()
   end
 

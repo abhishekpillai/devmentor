@@ -4,7 +4,9 @@ defmodule Devmentor.MentorshipController do
   alias Devmentor.Mentorship
 
   def index(conn, _params) do
-    mentorships = Repo.all(Mentorship)
+    mentorships =
+      Repo.all(Mentorship)
+      |> Enum.map(fn(m) -> Repo.preload(m, [:mentor, :mentee]) end)
     render(conn, "index.html", mentorships: mentorships)
   end
 
@@ -27,7 +29,9 @@ defmodule Devmentor.MentorshipController do
   end
 
   def show(conn, %{"id" => id}) do
-    mentorship = Repo.get!(Mentorship, id)
+    mentorship =
+      Repo.get!(Mentorship, id)
+      |> Repo.preload([:mentor, :mentee])
     render(conn, "show.html", mentorship: mentorship)
   end
 

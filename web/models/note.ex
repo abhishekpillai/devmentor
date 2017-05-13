@@ -3,8 +3,8 @@ defmodule Devmentor.Note do
 
   schema "notes" do
     field :body, :string
-    field :mentorship_id, :integer
 
+    belongs_to :mentorship, Devmentor.Mentorship
     timestamps()
   end
 
