@@ -4,7 +4,9 @@ defmodule Devmentor.NoteController do
   alias Devmentor.Note
 
   def index(conn, _params) do
-    notes = Repo.all(Note)
+    notes =
+      Repo.all(Note)
+      |> Enum.map(fn(n) -> Repo.preload(n, :user) end)
     render(conn, "index.html", notes: notes)
   end
 
@@ -27,7 +29,9 @@ defmodule Devmentor.NoteController do
   end
 
   def show(conn, %{"id" => id}) do
-    note = Repo.get!(Note, id)
+    note =
+      Repo.get!(Note, id)
+      |> Repo.preload(:user)
     render(conn, "show.html", note: note)
   end
 
