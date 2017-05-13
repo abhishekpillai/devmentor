@@ -4,6 +4,8 @@
   <thead>
     <tr>
       <th>Body</th>
+      <th>Mentorship Id</th>
+      <th>Note Taker</th>
 
       <th></th>
     </tr>
@@ -12,6 +14,8 @@
 <%= for note <- @notes do %>
     <tr>
       <td><%= note.body %></td>
+      <td><%= note.mentorship_id %></td>
+      <td><%= note.user.name %></td>
 
       <td class="text-right">
         <%= link "Show", to: note_path(@conn, :show, note), class: "btn btn-default btn-xs" %>

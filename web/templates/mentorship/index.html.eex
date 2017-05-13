@@ -1,0 +1,30 @@
+<h2>Listing mentorships</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Mentor</th>
+      <th>Mentee</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for mentorship <- @mentorships do %>
+    <tr>
+      <td><%= mentorship.id %></td>
+      <td><%= mentorship.mentor.name %></td>
+      <td><%= mentorship.mentee.name %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: mentorship_path(@conn, :show, mentorship), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: mentorship_path(@conn, :edit, mentorship), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: mentorship_path(@conn, :delete, mentorship), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New mentorship", to: mentorship_path(@conn, :new) %>

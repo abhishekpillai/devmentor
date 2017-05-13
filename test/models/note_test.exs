@@ -3,7 +3,11 @@ defmodule Devmentor.NoteTest do
 
   alias Devmentor.Note
 
-  @valid_attrs %{body: "some content"}
+  @valid_attrs %{
+    body: "some content",
+    mentorship_id: 1,
+    user_id: 1
+  }
   @invalid_attrs %{}
 
   test "changeset with valid attributes" do

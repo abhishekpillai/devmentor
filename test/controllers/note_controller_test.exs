@@ -1,8 +1,12 @@
 defmodule Devmentor.NoteControllerTest do
   use Devmentor.ConnCase
 
-  alias Devmentor.Note
-  @valid_attrs %{body: "some content"}
+  alias Devmentor.{Note, User}
+  @valid_attrs %{
+    body: "some content",
+    mentorship_id: 1,
+    user_id: 1
+  }
   @invalid_attrs %{}
 
   test "lists all entries on index", %{conn: conn} do
@@ -27,7 +31,8 @@ defmodule Devmentor.NoteControllerTest do
   end
 
   test "shows chosen resource", %{conn: conn} do
-    note = Repo.insert! %Note{}
+    user = Repo.insert! %User{}
+    note = Repo.insert! %Note{user_id: user.id}
     conn = get conn, note_path(conn, :show, note)
     assert html_response(conn, 200) =~ "Show note"
   end
