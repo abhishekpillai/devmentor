@@ -1,0 +1,6 @@
+<h2>Edit mentorship</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: mentorship_path(@conn, :update, @mentorship) %>
+
+<%= link "Back", to: mentorship_path(@conn, :index) %>

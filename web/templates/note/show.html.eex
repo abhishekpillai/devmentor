@@ -7,6 +7,11 @@
     <%= @note.body %>
   </li>
 
+  <li>
+    <strong>Mentorship Id:</strong>
+    <%= @note.mentorship_id %>
+  </li>
+
 </ul>
 
 <%= link "Edit", to: note_path(@conn, :edit, @note) %>

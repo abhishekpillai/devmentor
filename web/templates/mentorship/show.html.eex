@@ -1,0 +1,18 @@
+<h2>Show mentorship</h2>
+
+<ul>
+
+  <li>
+    <strong>Mentor:</strong>
+    <%= @mentorship.mentor_id %>
+  </li>
+
+  <li>
+    <strong>Mentee:</strong>
+    <%= @mentorship.mentee_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: mentorship_path(@conn, :edit, @mentorship) %>
+<%= link "Back", to: mentorship_path(@conn, :index) %>
