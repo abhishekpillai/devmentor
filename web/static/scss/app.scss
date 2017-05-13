@@ -1,3 +1,13 @@
 /* This file is for your main application sass. */
+// Shared modules styling
+@import "globals";
 
 @import "home";
+
+@import "consts";
+
+@import "header";
+
+@import "mentor_menu";
+
+@import "notes_list";
