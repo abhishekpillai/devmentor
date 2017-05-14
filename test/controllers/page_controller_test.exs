@@ -8,6 +8,6 @@ defmodule Devmentor.PageControllerTest do
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"
-    assert html_response(conn, 200) =~ "Hi Neely"
+    assert html_response(conn, 200) =~ "Your Mentor"
   end
 end

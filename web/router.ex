@@ -24,7 +24,10 @@ defmodule Devmentor.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Devmentor do
-  #   pipe_through :api
-  # end
+  scope "/api", Devmentor do
+    pipe_through :api
+
+    get "/mentorships/:id/notes", Api.MentorshipController, :notes, as: :api_mentorship
+    post "/notes", Api.NoteController, :create, as: :api_note
+  end
 end
