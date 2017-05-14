@@ -4,7 +4,7 @@ defmodule Devmentor.PageController do
   alias Devmentor.{Mentorship, Note}
 
   def home(conn, _params) do
-    mship = Mentorship.by_id(1)
+    mship = Mentorship |> first |> Repo.one
     notes = Note.by_mentorship(mship.id)
     render conn, "home.html", notes: notes
   end
