@@ -20,7 +20,8 @@
             <li>Industry/Career Content</li>
         </ul>
         <form id="create-note-form-js">
-            <textarea id="note-input-js" class="note-input"/></textarea>
+            <div id="editor" class="note-input">
+            </div>
             <button class="tag-submit" type="submit">
                 Tag <i class="fa fa-caret-down" aria-hidden="true"></i>
                 <ul>

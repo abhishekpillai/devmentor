@@ -13,6 +13,10 @@
 // to also remove its path from "config.paths.watched".
 import "phoenix_html"
 
+var quill = new Quill('#editor', {
+  theme: 'snow'
+});
+
 // Import local files
 //
 // Local files can be imported directly using relative
@@ -22,7 +26,6 @@ import "phoenix_html"
 
 // page elements
 const list = document.getElementById('note-list-js');
-const noteInput = document.getElementById('note-input-js');
 const noteSubmit = document.getElementById('note-submit-js');
 
 // functions
@@ -40,7 +43,7 @@ noteSubmit.onclick = () => {
     headers,
     body: JSON.stringify({
       note: {
-        body: noteInput.value,
+        body: quill.getText(),
         mentorship_id: 1,
         user_id: 2,
         note_type: getNoteType()
