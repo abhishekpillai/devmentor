@@ -24,16 +24,14 @@
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
-
-    <%# </div> <!-- /container --> %>
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <!-- Main Quill library -->
-    <script src="//cdn.quilljs.com/1.2.4/quill.js"></script>
     <script src="//cdn.quilljs.com/1.2.4/quill.min.js"></script>
-    <script>
+<%#     <script>
       var quill = new Quill('#editor', {
         theme: 'snow'
       });
-    </script>
+    </script> %>
+    <%# </div> <!-- /container --> %>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
