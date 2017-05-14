@@ -21,6 +21,7 @@
         </ul>
         <form id="create-note-form-js">
             <textarea id="note-input-js" class="note-input"/></textarea>
+            <input id="note-action-item-checkbox-js" type="checkbox">Action Item
             <button id="note-submit-js" class="post-submit" type="submit" form="create-note-form" value="Submit">
               Post
             </button>
@@ -28,17 +29,17 @@
         <h2>All Posts</h2>
         <ol id="note-list-js" class="submitted-note-list">
           <%= for note <- @notes do %>
-            <li class="note" id="note-<%= note.id %>">
+            <li class="note">
                 <p>
                     <%= note.body %>
                 </p>
-                <img src="/images/abhi.jpg" class="note-image">
+                <img src=<%= note.user.avatar %> class="note-image">
                 <ul class="metadata-list">
                     <li>React</li>
                     <li>Typescript</li>
                     <li></li>
                 </ul>
-                <h3>Action Item</h3>
+                <h3><%= note.note_type %></h3>
             </li>
           <% end %>
         </ol>

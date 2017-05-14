@@ -24,7 +24,8 @@ defmodule Devmentor.Api.NoteController do
       body: note.body,
       user: %{
         name: note.user.name
-      }
+      },
+      note_type: note.note_type
     }
   end
 end
