@@ -30,7 +30,7 @@
           <%= for note <- @notes do %>
             <li>
               <%= note.body %> BY <%= note.user.name %>
-              <h3><%= note.note_type %></h3>
+              <p><%= note.note_type %></p>
             </li>
           <% end %>
         </ol>

@@ -33,15 +33,12 @@ const addNoteToList = (responseBody) => {
     data: { body, note_type, user: { name: noteTaker } }
   } = responseBody;
   const newListEl = document.createElement('li');
-  const listContent = document.createTextNode(
-    `
-      <li>
-        ${body} %> BY ${noteTaker}
-        <h3>${note_type}</h3>
-      </li>
-    `
-  );
-  newListEl.appendChild(listContent);
+  const listElContent = document.createTextNode(`${body} BY ${noteTaker}`);
+  const newListElType = document.createElement('p');
+  const listElTypeContent = document.createTextNode(note_type);
+  newListElType.appendChild(listElTypeContent);
+  newListEl.appendChild(listElContent);
+  newListEl.appendChild(newListElType);
   var topOfList = list.children[0];
   list.insertBefore(newListEl, topOfList);
 };
