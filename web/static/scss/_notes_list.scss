@@ -1,6 +1,7 @@
 .note-list {
     padding: 100px 50px 0px;
     align-self: flex-start;
+    margin-left: 400px;
     h2 {
         text-transform: uppercase;
     }
@@ -26,18 +27,61 @@ form {
     }
 }
 
-.post-submit {
-    color: #fff;
-    background-color: #0066CC;
+.post-submit,
+.tag-submit {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    position: absolute;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 14px;
-    padding: 10px;
-    position: absolute;
-    bottom: 6px;
-    right: 3px;
 }
 
+
+.post-submit {
+    color: #0066cc;
+    background-color: #fff;
+    padding: 10px 25px;
+    border-radius: 25px;
+    bottom: 8px;
+    right: 8px;
+    border: 1px solid #0066cc;
+    &:hover,
+    &:active {
+        background-color: #000;
+        color: #fff;
+        border: none;
+    }
+}
+
+.tag-submit {
+    position: absolute;
+    left: 0px;
+    bottom: 4px;
+    z-index: 5;
+    padding: 12px;
+    background-color: #fff;
+    color: #333;
+    ul {
+        display: none;
+    }
+    &:hover {
+        ul {
+            display: block;
+            position: absolute;
+            background: #fff;
+            color: #000;
+            left: 0px;
+            box-shadow: 1px 1px 1px 1px #dddddd;
+            li {
+                padding: 8px;
+                border-bottom: 1px solid $dark-gray;
+                &:hover {
+                    color: $brand-blue;
+                }
+            }
+        }
+    }
+}
 
 .content-menu {
     margin: 20px 0px;
@@ -54,6 +98,12 @@ form {
 
 .submitted-note-list {
     margin-top: 20px;
+    .fa-reply {
+        color: $dark-gray;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+    }
     .note {
         padding: 35px;
         background-color: $light-gray;
@@ -67,22 +117,25 @@ form {
         font-weight: 700;
         text-transform: uppercase;
         position: absolute;
-        width: 100%;
+        width: 150px;
+        max-width: 150px;
+        margin: 0px auto 10px;
         bottom: -10px;
         left: 0px;
         font-size: 10px;
         padding: 5px 0px;
         text-align: center;
-        margin-bottom: 10px;
-        z-index: 1;
+        &:hover {
+            background-color: #000;
+        }
     }
     p {
         max-width: 400px;
     }
     img {
-        width: 55px;
+        width: 35px;
         position: absolute;
-        bottom: 10px;
+        bottom: 8px;
         right: 10px;
         z-index: 2;
     }
@@ -94,6 +147,7 @@ form {
             font-size: 10px;
             text-transform: uppercase;
             border-bottom: 1px solid $dark-gray;
+            margin-right: 5px;
             // text-decoration: underline;
         }
     }
