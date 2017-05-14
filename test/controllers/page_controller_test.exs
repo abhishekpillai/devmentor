@@ -1,7 +1,7 @@
 defmodule Devmentor.PageControllerTest do
   use Devmentor.ConnCase
 
-  alias Devmentor.{Mentorship, Repo}
+  alias Devmentor.{Mentorship, User, Repo}
 
   test "GET /phoenix_home", %{conn: conn} do
     conn = get conn, "/phoenix_home"
@@ -9,7 +9,9 @@ defmodule Devmentor.PageControllerTest do
   end
 
   test "GET /", %{conn: conn} do
-    Repo.insert! %Mentorship{mentor_id: 1, mentee_id: 2}
+    user = Repo.insert! %User{}
+    user2 = Repo.insert! %User{}
+    Repo.insert! %Mentorship{mentor_id: user.id, mentee_id: user2.id}
     conn = get conn, "/"
     assert html_response(conn, 200) =~ "Your Mentor"
   end

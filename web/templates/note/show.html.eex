@@ -13,8 +13,13 @@
   </li>
 
   <li>
-    <strong>Mentorship Id:</strong>
+    <strong>Note Taker:</strong>
     <%= @note.user.name %>
+  </li>
+
+  <li>
+    <strong>Note Type:</strong>
+    <%= @note.note_type %>
   </li>
 
 </ul>

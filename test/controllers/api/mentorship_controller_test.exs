@@ -21,8 +21,8 @@ defmodule Devmentor.Api.MentorshipControllerTest do
       conn = get build_conn(), api_mentorship_path(build_conn(), :notes, mship.id)
       assert json_response(conn, 200) == %{
         "data" => [
-          %{ "body" => "test note", "user" => %{ "name" => "abhi" } },
-          %{ "body" => "test note 2", "user" => %{ "name" => "neely" } },
+          %{ "body" => "test note", "note_type" => "general", "user" => %{ "name" => "abhi" } },
+          %{ "body" => "test note 2","note_type" => "general",  "user" => %{ "name" => "neely" } },
         ]
       }
     end

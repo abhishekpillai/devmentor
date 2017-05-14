@@ -21,6 +21,7 @@ defmodule Devmentor.Api.NoteControllerTest do
       assert json_response(conn, 201) == %{
         "data" => %{
           "body" => "some content",
+          "note_type" => "general",
           "user" => %{ "name" => "abhi" }
         }
       }
