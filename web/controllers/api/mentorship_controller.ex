@@ -10,7 +10,7 @@ defmodule Devmentor.Api.MentorshipController do
       nil ->
         conn
         |> put_status(404)
-        |> json %{}
+        |> json(%{})
       %{ notes: notes } ->
         json conn, %{ data: Enum.map(notes, &note_json(&1)) }
     end

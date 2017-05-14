@@ -12,7 +12,7 @@ defmodule Devmentor.Api.NoteControllerTest do
         %Mentorship{ mentor_id: user_abhi.id, mentee_id: user_neely.id }
         |> Repo.insert!()
 
-      conn = post conn, api_note_path(conn, :create), note: %{
+      conn = post build_conn(), api_note_path(build_conn(), :create), note: %{
         body: "some content",
         mentorship_id: mship.id,
         user_id: user_abhi.id
@@ -30,11 +30,11 @@ defmodule Devmentor.Api.NoteControllerTest do
       user_abhi = Repo.insert! %User{ name: "abhi" }
       user_neely = Repo.insert! %User{ name: "neely" }
 
-      mship =
+      _mship =
         %Mentorship{ mentor_id: user_abhi.id, mentee_id: user_neely.id }
         |> Repo.insert!()
 
-      conn = post conn, api_note_path(conn, :create), note: %{
+      conn = post build_conn(), api_note_path(build_conn(), :create), note: %{
         body: "some content",
         user_id: user_abhi.id
       }

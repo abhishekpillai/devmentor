@@ -4,7 +4,7 @@ defmodule Devmentor.Api.MentorshipControllerTest do
   alias Devmentor.{Repo, Note, Mentorship, User}
 
   describe "notes/2" do
-    test "returns 200 and gets all notes for a mentorship", %{conn: conn} do
+    test "returns 200 and gets all notes for a mentorship" do
       user_abhi = Repo.insert! %User{ name: "abhi" }
       user_neely = Repo.insert! %User{ name: "neely" }
 
@@ -18,7 +18,7 @@ defmodule Devmentor.Api.MentorshipControllerTest do
       ]
       Enum.each(notes, &Repo.insert!(&1))
 
-      conn = get conn, api_mentorship_path(conn, :notes, mship.id)
+      conn = get build_conn(), api_mentorship_path(build_conn(), :notes, mship.id)
       assert json_response(conn, 200) == %{
         "data" => [
           %{ "body" => "test note", "user" => %{ "name" => "abhi" } },
@@ -35,15 +35,12 @@ defmodule Devmentor.Api.MentorshipControllerTest do
         %Mentorship{ mentor_id: user_abhi.id, mentee_id: user_neely.id }
         |> Repo.insert!()
 
-      conn = get conn, api_mentorship_path(conn, :notes, mship.id)
+      conn = get build_conn(), api_mentorship_path(build_conn(), :notes, mship.id)
       assert json_response(conn, 200) == %{ "data" => [] }
     end
 
     test "returns 404 if mentorship not found" do
-      user_abhi = Repo.insert! %User{ name: "abhi" }
-      user_neely = Repo.insert! %User{ name: "neely" }
-
-      conn = get conn, api_mentorship_path(conn, :notes, 1)
+      conn = get build_conn(), api_mentorship_path(build_conn(), :notes, 1)
       assert json_response(conn, 404)
     end
   end
