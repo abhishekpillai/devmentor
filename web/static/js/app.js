@@ -33,9 +33,11 @@ const addNoteToList = (responseBody) => {
     data: { body, note_type, user: { name: noteTaker } }
   } = responseBody;
   const newListEl = document.createElement('li');
+
   const listElContent = document.createTextNode(`${body} BY ${noteTaker}`);
   const newListElType = document.createElement('p');
   const listElTypeContent = document.createTextNode(note_type);
+  newListEl.className = "note";
   newListElType.appendChild(listElTypeContent);
   newListEl.appendChild(listElContent);
   newListEl.appendChild(newListElType);

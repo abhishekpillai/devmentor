@@ -1,8 +1,9 @@
 <div class="container">
     <aside>
         <div class="logo">
-            <h1 class="dev">Dev</h1>
-            <h1 class="mentor">Mentor</h1>
+            <h1 class="dev">
+                Dev<span class="mentor">Mentor</span>
+            </h1>
         </div>
         <div class="mentor-info">
           <img src=<%= @mentor.avatar %> class="mentor-profile-image">
@@ -28,9 +29,17 @@
         <h2>All Posts</h2>
         <ol id="note-list-js" class="submitted-note-list">
           <%= for note <- @notes do %>
-            <li>
-              <%= note.body %> BY <%= note.user.name %>
-              <p><%= note.note_type %></p>
+            <li class="note">
+                <p>
+                    <%= note.body %>
+                </p>
+                <img src=<%= note.user.avatar %> class="note-image">
+                <ul class="metadata-list">
+                    <li>React</li>
+                    <li>Typescript</li>
+                    <li></li>
+                </ul>
+                <h3><%= note.note_type %></h3>
             </li>
           <% end %>
         </ol>
