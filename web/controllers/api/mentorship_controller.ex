@@ -4,8 +4,7 @@ defmodule Devmentor.Api.MentorshipController do
   alias Devmentor.Mentorship
 
   def notes(conn, %{"id" => id}) do
-    mship = Repo.get(Mentorship, id)
-      |> Repo.preload([notes: :user])
+    mship = Mentorship.by_id(id)
     case mship do
       nil ->
         conn

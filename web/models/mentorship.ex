@@ -1,6 +1,8 @@
 defmodule Devmentor.Mentorship do
   use Devmentor.Web, :model
 
+  alias Devmentor.Mentorship
+
   schema "mentorships" do
     belongs_to :mentor, Devmentor.User
     belongs_to :mentee, Devmentor.User
@@ -15,5 +17,16 @@ defmodule Devmentor.Mentorship do
     struct
     |> cast(params, [:mentor_id, :mentee_id])
     |> validate_required([:mentor_id, :mentee_id])
+  end
+
+  def by_id(id) do
+    mship =
+      from m in Mentorship,
+      where: m.id == ^id,
+      left_join: notes in assoc(m, :notes),
+      left_join: user in assoc(notes, :user),
+      preload: [notes: {notes, user: user}]
+
+    Devmentor.Repo.one(mship)
   end
 end

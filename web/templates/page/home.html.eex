@@ -18,15 +18,19 @@
             <li>Key Lessons</li>
             <li>Industry/Career Content</li>
         </ul>
-        <form>
-            <textarea class="note-input"/></textarea>
-            <a class="post-submit" href="">Post</a>
+        <form id="create-note-form-js">
+            <textarea id="note-input-js" class="note-input"/></textarea>
+            <button id="note-submit-js" class="post-submit" type="submit" form="create-note-form" value="Submit">
+              Post
+            </button>
         </form>
-        <ol class="submitted-note-list">
-            <h2>All Posts</h2>
-            <li>stores update their state based on the action</li>
-            <li></li>
-            <li></li>
+        <h2>All Posts</h2>
+        <ol id="note-list-js" class="submitted-note-list">
+          <%= for note <- @notes do %>
+            <li id="note-<%= note.id %>">
+              <%= note.body %> BY <%= note.user.name %>
+            </li>
+          <% end %>
         </ol>
     </div>
     <header>
