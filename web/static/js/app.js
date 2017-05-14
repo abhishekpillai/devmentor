@@ -24,6 +24,7 @@ const list = document.getElementById('note-list-js');
 const addNoteToList = (responseBody) => {
   const { data: { body: body, user: { name: noteTaker } } } = responseBody;
   const newListEl = document.createElement('li');
+  newListEl.className = "note";
   const listContent = document.createTextNode(body + ' BY ' + noteTaker);
   newListEl.appendChild(listContent);
   var topOfList = list.children[0];
