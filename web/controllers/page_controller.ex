@@ -4,8 +4,7 @@ defmodule Devmentor.PageController do
   alias Devmentor.Mentorship
 
   def home(conn, _params) do
-    mship = Repo.get(Mentorship, 1) # hardcode to 1st
-      |> Repo.preload([notes: :user])
+    mship = Mentorship.by_id(1)
     render conn, "home.html", notes: mship.notes
   end
 

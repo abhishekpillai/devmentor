@@ -12,7 +12,7 @@ defmodule Devmentor.Api.NoteController do
         conn
         |> put_status(201)
         |> json(%{"data" => note_json(note)})
-      {:error, changeset} -> :error
+      {:error, _changeset} -> :error
         conn
         |> put_status(400)
         |> json(%{"data" => nil})
