@@ -1,6 +1,7 @@
 body,
 p {
 	margin: 0px;
+	font-family: "Lato", sans-serif;
 }
 
 img {
@@ -12,4 +13,8 @@ ol {
 	list-style-type: none;
 	margin: 0px;
 	padding: 0px;
+}
+
+a {
+	text-decoration: none;
 }

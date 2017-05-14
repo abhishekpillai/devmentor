@@ -3,29 +3,12 @@ header,
     display: flex;
 }
 
-.dev,
-.mentor {
-    font-family: "Lato";
-    display: inline;
-    text-transform: uppercase;
-    color: $brand-blue;
-}
-
-.dev {
-    font-weight: 300;
-}
-
-.mentor {
-    font-weight: 400;
-    margin-left: -5px;
-}
-
 header {
     justify-content: space-between;
     padding: 10px;
     // border-bottom: 1px solid $brand-blue;
     div {
-        align-self: center;
+        align-self: flex-start;
     }
     img {
         max-width: 80px;
