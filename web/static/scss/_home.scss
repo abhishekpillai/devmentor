@@ -1,6 +1,11 @@
 /*****************************************/
 /* This file is for your home page sass. */
-section {
-	display: flex;
-}
+// section {
+//  display: flex;
+// }
 
+.container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}

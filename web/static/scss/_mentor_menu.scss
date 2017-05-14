@@ -3,7 +3,55 @@ aside {
     background-color: $light-gray;
     text-align: center;
     padding: 20px;
+    min-height: 650px;
+    .logo {
+        border-bottom: 1px solid $brand-blue;
+    }
+    .dev,
+    .mentor {
+        font-size: 32px;
+        font-family: "Lato";
+        display: inline;
+        text-transform: uppercase;
+        color: $brand-blue;
+    }
+
+    .dev {
+        font-weight: 300;
+    }
+
+    .mentor {
+        font-weight: 400;
+        margin-left: -5px;
+    }
+    .mentor-info {
+        padding-bottom: 15px;
+    }
     img {
+        margin-top: 35px;
         width: 150px;
+    }
+    h2 {
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    h3,
+    h4 {
+        line-height: 0.2em;
+    }
+    h3 {
+        font-family: "Merriweather", serif;
+        font-weight: 400;
+        font-size: 20px;
+        color: $brand-blue;
+    }
+    h4 {
+        font-family: "Merriweather", serif;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 12px;
     }
 }
