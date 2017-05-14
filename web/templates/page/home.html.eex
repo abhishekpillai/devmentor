@@ -46,9 +46,11 @@
             <a class="Post" href="">Post</a>
         </form>
         <ol class="note-list">
-            <li></li>
-            <li></li>
-            <li></li>
+          <%= for note <- @notes do %>
+            <li>
+              <%= note.body %> BY <%= note.user.name %>
+            </li>
+          <% end %>
         </ol>
     </div>
 </section>
