@@ -4,6 +4,9 @@
     margin-left: 400px;
     h2 {
         text-transform: uppercase;
+        margin-top: 50px;
+        border-top: 3px solid $brand-blue;
+        padding-top: 10px;
     }
 }
 
@@ -36,7 +39,6 @@ form {
     font-weight: 700;
 }
 
-
 .post-submit {
     color: #0066cc;
     background-color: #fff;
@@ -55,7 +57,7 @@ form {
 
 .tag-submit {
     position: absolute;
-    left: 0px;
+    left: 4px;
     bottom: 4px;
     z-index: 5;
     padding: 12px;

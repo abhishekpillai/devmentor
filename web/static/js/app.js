@@ -30,8 +30,8 @@ const addNoteToList = (responseBody) => {
   var topOfList = list.children[0];
   list.insertBefore(newListEl, topOfList);
 }
-const noteInput = document.getElementById('note-input-js');
-const noteSubmit = document.getElementById('note-submit-js');
+const noteInput = document.getElementById('editor');
+const noteSubmit = document.getElementById('editor');
 
 const headers = new Headers();
 headers.set('Accept', 'application/json');
