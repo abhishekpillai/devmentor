@@ -4,6 +4,9 @@ aside {
     text-align: center;
     padding: 20px;
     min-height: 650px;
+    .logo {
+        border-bottom: 1px solid $brand-blue;
+    }
     .dev,
     .mentor {
         font-size: 32px;
@@ -22,7 +25,6 @@ aside {
         margin-left: -5px;
     }
     .mentor-info {
-        border-bottom: 1px solid $dark-gray;
         padding-bottom: 15px;
     }
     img {

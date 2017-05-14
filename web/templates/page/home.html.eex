@@ -1,7 +1,6 @@
 <div class="container">
-    <%# <section> %>
     <aside>
-        <div>
+        <div class="logo">
             <h1 class="dev">Dev</h1>
             <h1 class="mentor">Mentor</h1>
         </div>
@@ -19,22 +18,12 @@
             <li>Key Lessons</li>
             <li>Industry/Career Content</li>
         </ul>
-        <%# <ul class="takeaway-menu">
-            <li>
-                <i class="fa fa-share" aria-hidden="true"></i> Share an Update
-            </li>
-            <li>
-                <i class="fa fa-microphone" aria-hidden="true"></i> Record a Session
-            </li>
-            <li>
-                <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Schedule a Session
-            </li>
-        </ul> %>
         <form>
-            <input class="note-input"/>
+            <textarea class="note-input"/></textarea>
             <a class="post-submit" href="">Post</a>
         </form>
         <ol class="submitted-note-list">
+            <h2>All Posts</h2>
             <li>stores update their state based on the action</li>
             <li></li>
             <li></li>
@@ -48,11 +37,5 @@
             </div>
             <img src="/images/neely.jpeg" class="user-profile-image"/>
         </div>
-    <%#     <ul class="user-menu">
-            <li><i class="fa fa-circle" aria-hidden="true"></i></li>
-            <li><i class="fa fa-circle" aria-hidden="true"></i></li>
-            <li><i class="fa fa-circle" aria-hidden="true"></i></li>
-        </ul> %>
     </header>
-    <%# </section> %>
 </div>
