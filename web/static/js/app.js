@@ -20,23 +20,20 @@ import "phoenix_html"
 
 // import socket from "./socket"
 
+// page elements
 const list = document.getElementById('note-list-js');
-const addNoteToList = (responseBody) => {
-  const { data: { body: body, user: { name: noteTaker } } } = responseBody;
-  const newListEl = document.createElement('li');
-  newListEl.className = "note";
-  const listContent = document.createTextNode(body + ' BY ' + noteTaker);
-  newListEl.appendChild(listContent);
-  var topOfList = list.children[0];
-  list.insertBefore(newListEl, topOfList);
-}
-const noteInput = document.getElementById('editor');
-const noteSubmit = document.getElementById('editor');
+const noteInput = document.getElementById('note-input-js');
+const noteSubmit = document.getElementById('note-submit-js');
 
+// functions
+const getNoteType = () => {
+  return 'general';
+};
+
+// async calls
 const headers = new Headers();
 headers.set('Accept', 'application/json');
 headers.set('Content-Type', 'application/json');
-
 noteSubmit.onclick = () => {
   fetch('/api/notes', {
     method: 'POST',
@@ -45,10 +42,9 @@ noteSubmit.onclick = () => {
       note: {
         body: noteInput.value,
         mentorship_id: 1,
-        user_id: 2
+        user_id: 2,
+        note_type: getNoteType()
       }
     })
-  }).then((response) => {
-    response.json().then(addNoteToList);
-  });
+  }).then(() => window.location.reload());
 }
