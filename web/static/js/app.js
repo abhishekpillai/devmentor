@@ -23,30 +23,11 @@ import "phoenix_html"
 // page elements
 const list = document.getElementById('note-list-js');
 const noteInput = document.getElementById('note-input-js');
-const noteActionItemCheck =
-  document.getElementById('note-action-item-checkbox-js');
 const noteSubmit = document.getElementById('note-submit-js');
 
 // functions
-const addNoteToList = (responseBody) => {
-  const {
-    data: { body, note_type, user: { name: noteTaker } }
-  } = responseBody;
-  const newListEl = document.createElement('li');
-
-  const listElContent = document.createTextNode(`${body} BY ${noteTaker}`);
-  const newListElType = document.createElement('p');
-  const listElTypeContent = document.createTextNode(note_type);
-  newListEl.className = "note";
-  newListElType.appendChild(listElTypeContent);
-  newListEl.appendChild(listElContent);
-  newListEl.appendChild(newListElType);
-  var topOfList = list.children[0];
-  list.insertBefore(newListEl, topOfList);
-};
-
 const getNoteType = () => {
-  return noteActionItemCheck.checked ?  'action_item' : 'general';
+  return 'general';
 };
 
 // async calls
@@ -65,7 +46,5 @@ noteSubmit.onclick = () => {
         note_type: getNoteType()
       }
     })
-  }).then((response) => {
-    response.json().then(addNoteToList);
-  });
+  }).then(() => window.location.reload());
 }
