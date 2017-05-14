@@ -18,6 +18,7 @@ defmodule Devmentor.Router do
     get "/phoenix_home", PageController, :phoenix_home
 
     get "/", PageController, :home
+    get "/home/:id", PageController, :home
     resources "/users", UserController
     resources "/mentorships", MentorshipController
     resources "/notes", NoteController

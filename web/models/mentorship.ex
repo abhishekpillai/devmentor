@@ -25,7 +25,9 @@ defmodule Devmentor.Mentorship do
       where: m.id == ^id,
       left_join: notes in assoc(m, :notes),
       left_join: user in assoc(notes, :user),
-      preload: [notes: {notes, user: user}]
+      left_join: mentor in assoc(m, :mentor),
+      left_join: mentee in assoc(m, :mentee),
+      preload: [:mentor, :mentee, notes: {notes, user: user}]
 
     Devmentor.Repo.one(mship)
   end
