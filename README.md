@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/abhishekpillai/devmentor.svg?branch=master)](https://travis-ci.org/abhishekpillai/devmentor)
+
 # Devmentor
 
 To start your Phoenix app:
