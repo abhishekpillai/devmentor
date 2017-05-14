@@ -3,25 +3,30 @@ aside {
     background-color: $light-gray;
     text-align: center;
     padding: 20px;
-    min-height: 650px;
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    left:0;
     .logo {
         border-bottom: 1px solid $brand-blue;
         .dev,
         .mentor {
             font-size: 38px;
-            font-family: 'Lato', sans-serif;
-            // font-family: 'PT Sans Narrow', sans-serif;
+            font-familymily: 'Lato', sans-serif;
             display: inline;
             text-transform: uppercase;
             color: $brand-blue;
         }
         .dev {
             font-weight: 300;
+            letter-spacing: -4px;
         }
 
         .mentor {
             font-weight: 700;
-            margin-left: -2px;
+            letter-spacing: 0px;
+            margin-left: 2px;
         }
     }
     .mentor-info {

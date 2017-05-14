@@ -21,6 +21,14 @@
         </ul>
         <form id="create-note-form-js">
             <textarea id="note-input-js" class="note-input"/></textarea>
+            <button class="tag-submit" type="submit">
+                Tag <i class="fa fa-caret-down" aria-hidden="true"></i>
+                <ul>
+                    <li>Action Items</li>
+                    <li>Key Lessons</li>
+                    <li>Industry/Career Content</li>
+                </ul>
+            </button>
             <button id="note-submit-js" class="post-submit" type="submit" form="create-note-form" value="Submit">
               Post
             </button>
@@ -29,6 +37,7 @@
         <ol id="note-list-js" class="submitted-note-list">
           <%= for note <- @notes do %>
             <li class="note" id="note-<%= note.id %>">
+                <i class="fa fa-reply" aria-hidden="true"></i>
                 <p>
                     <%= note.body %>
                 </p>
