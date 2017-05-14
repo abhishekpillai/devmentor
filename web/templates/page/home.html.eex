@@ -41,13 +41,13 @@
                 <i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Schedule a Session
             </li>
         </ul>
-        <form>
-            <input class="note-input"/>
-            <a class="Post" href="">Post</a>
+        <form id="create-note-form-js">
+            <input id="note-input-js" class="note-input"/>
+            <button id="note-submit-js" type="submit" form="create-note-form" value="Submit">Post</button>
         </form>
-        <ol class="note-list">
+        <ol id="note-list-js" class="note-list">
           <%= for note <- @notes do %>
-            <li>
+            <li id="note-<%= note.id %>">
               <%= note.body %> BY <%= note.user.name %>
             </li>
           <% end %>
