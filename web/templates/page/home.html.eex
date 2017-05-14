@@ -5,9 +5,9 @@
             <h1 class="mentor">Mentor</h1>
         </div>
         <div class="mentor-info">
-            <img src="/images/abhi.jpg" class="mentor-profile-image">
+          <img src=<%= @mentor.avatar %> class="mentor-profile-image">
             <h2>Your Mentor</h2>
-            <h3>Abhishek Pillai</h3>
+            <h3><%= @mentor.name %></h3>
             <h4>Full Stack Engineer</h4>
         </div>
     </aside>
@@ -39,7 +39,7 @@
                 <input placeholder="Search">
                 <span><i class="fa fa-search" aria-hidden="true"></i></span>
             </div>
-            <img src="/images/neely.jpeg" class="user-profile-image"/>
+            <img src=<%= @mentee.avatar %> class="user-profile-image">
         </div>
     </header>
 </div>
