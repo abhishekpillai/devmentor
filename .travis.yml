@@ -1,3 +1,11 @@
 language: elixir
 elixir:
-  - 1.4.2
+- 1.4.2
+deploy:
+  provider: heroku
+  api_key:
+    secure: Q37Fytx1NCiUBJT22d1wlGfKNDgm+6p4q2Cei2igEGKb16x90hgaS4Uo61odGm2PZt24hxtsTbo5wKpaXMYf6fegBpbPHpLPapIvhNymWAHZ/wej2Vi93bPE28ZcmV3fLmo5VzwteRijsrMqx7GnhC5dLFB+vLBx5T4xt+Ovr8GvWEduatQd637uoIaBlhsBtDU90jpDFgXzJzT8yrCCj7Imfg/CvXNqLdzY4t2TwjeO8hv2eKCgzfWvKRbIuBo1yksMVeJPFgdHjx2xTSIPJ120o/ct7t2wwhAS4Nn/xjWgd0XL0L7jXeSkTkkqYrEjy7VXMANZRdiqO0Mv3REgaahRnu1+L4ublj/kEo0nWhmG8w36gzwLi2hNjd6whjICAp8FD8jUWGzHmtYmY7hqS8GVxEPjd5yrqyM5NCcSwlowd+VD3H+W6ClasdVDWAUkws6wUhWWq0v9q8mdET3BGhvpzaZusJ3Z24sm1Snk2yENfJeofTDfTc+MMFFrBU6RShmBt7SjVihyWg5bpzsw1xGVg/PC//ZRF3Y2+on0ZqZhvYHk10VcRTqC6Q8zqSIc/YnO58U41+8fLRe8nN4tvbehMKE63abaarBJ2d+QSO46JpGoS4q+tdpc9aoKxW0xCY9svJ9vw668QAi2fOrDQH6BudlpnP5GWtt97bcqxp4=
+  app: dev-mentor
+  on:
+    repo: abhishekpillai/devmentor
+  run: "POOL_SIZE=2 mix ecto.migrate"
